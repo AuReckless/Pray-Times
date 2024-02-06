@@ -248,7 +248,7 @@ const prayTimesContainer = document.getElementById('pray-times');
 const cityDateContainer = document.getElementById('city-date');
 // Function to get prayer time information
 function getInfo(cityCode) {
-  fetch(`http://api.aladhan.com/v1/timingsByCity/:date?country=SA&city=${cityCode}&method=4&adjustment=-1`)
+  fetch(`https://api.aladhan.com/v1/timingsByCity/:date?country=SA&city=${cityCode}&method=4&adjustment=-1`)
     .then(response => response.json())
     .then(data => {
       console.log(data)

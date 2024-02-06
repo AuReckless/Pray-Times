@@ -1,7 +1,7 @@
 const random = Math.random();
 
 
-fetch(`http://api.alquran.cloud/v1/ayah/random/ar.asad?randomParam=${random}`)
+fetch(`https://api.alquran.cloud/v1/ayah/random/ar.asad?randomParam=${random}`)
   .then(response => response.json())
   .then(data =>{
     const container = document.getElementById('ayah')
