@@ -2,7 +2,7 @@
 
 # Pray Times Extension
 
-It is web browser extension that let you see the pray time by choosing your city and give you random ayah every time you open the extension.
+It is a web browser extension that lets you see the pray time by choosing your city and giving you random ayah every time you open the extension.
 
 ## Features
 
@@ -11,8 +11,12 @@ It is web browser extension that let you see the pray time by choosing your city
 
 ## How to Use
 
-1. **Installation:** Simply clone the repo or download it as zip folder and then unzip it after that go to extensions page in your browser and enable developer option and then upload the folder make sure it is unzipped.
-2. **City Selection:** After installation, select your city to customize prayer times according to your location by pressing setting icon.
+1. **Installation:** Simply clone the repo or download it as a zip folder and then unzip it after that go to the extensions page in your browser enable the developer option and then upload the folder make sure it is unzipped.
+2. **City Selection:** After installation, select your city to customize prayer times according to your location by pressing the setting icon.
+
+## Using the website version
+
+**[Website URL](https://devm7mdali.github.io/Pray-Times/)**
 
 ## Some pictures of the extension
 
