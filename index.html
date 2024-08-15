@@ -15,14 +15,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./JS/functions/RandomAyah.js"></script>
+    <script src="./JS/cities.js"></script>
     <script src="./JS/functions/PrayTime.js" defer></script>
     <title>اوقات الصلاة</title>
   </head>
-  <body class="w-full h-full p-4 bg-slate-50" style="font-family: 'Tajawal', sans-serif">
-
+  <body class="min-w-72 w-screen p-6 bg-slate-50" style="font-family: 'Tajawal', sans-serif">
+    
     <!--? the setting part -->
+    <script src="./JS/general/hidepop.js"></script>
     <div class="fixed z-10 inset-0 overflow-y-auto hidden" id="set">
-      <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
           <div class="fixed inset-0 transition-opacity" aria-hidden="true">
               <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
           </div>
@@ -54,8 +56,7 @@
               </div>
           </div>
       </div>
-  </div>
-  <script src="./JS/general/hidepop.js"></script>
+    </div>
 
 
     <!--! main content -->
@@ -66,7 +67,7 @@
           اوقات الصلاة
         </h1>
       </div>
-      <div class=" flex justify-end items-start">
+      <div class="flex justify-end items-start">
         <button id="openButton">
           <img src="./assets/Icon/settings.png" alt="علامة أعدادات" class="w-6 h-6 flex flex-row justify-end items-end">
         </button>
@@ -86,7 +87,7 @@
 
 
     <!-- random Ayah section -->
-    <section id="ayah" class="flex flex-col gap-4 justify-center text-center text-base" style="font-family: 'Amiri Quran', serif">
+    <section id="ayah" class="flex w-full flex-col gap-4 justify-center text-center text-base text-wrap" style="font-family: 'Amiri Quran', serif">
       <!-- Random ayah will appear here -->
     </section>
   </body>
