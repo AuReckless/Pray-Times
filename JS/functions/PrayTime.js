@@ -31,19 +31,20 @@ const cityDateContainer = document.getElementById('city-date');
 // Function to get prayer time information
 function getInfo(cityCode) {
   if (localStorage.getItem('user-city')) {
-    fetch(`https://api.aladhan.com/v1/timingsByCity/:date?country=SA&city=${cityCode}&method=4&adjustment=-1`)
+    fetch(`https://api.aladhan.com/v1/timingsByCity/:date?country=SA&city=${cityCode}&method=0&adjustment=-1&midnightMode=0
+`)
       .then(response => response.json())
       .then(data => {
         //date and place apepend
         cityDateContainer.innerHTML = '';
         const cityName = document.createElement('p');
         cityName.textContent = document.getElementById('user-city').options[document.getElementById('user-city').selectedIndex].text;
-        cityName.classList = 'text-2xl text-bold text-gray-800'
+        cityName.classList = 'text-2xl text-bold text-gray-800 dark:text-slate-200'
         cityDateContainer.appendChild(cityName);
 
         const hijriDate = document.createElement('p');
         hijriDate.textContent = `تاريخ اليوم ${Number(data.data.date.hijri.day).toLocaleString('ar-EG', { useGrouping: false })} ${data.data.date.hijri.month.ar} ${Number(data.data.date.hijri.year).toLocaleString('ar-EG', { useGrouping: false })} هـ`;
-        hijriDate.classList = 'text-lg text-semibold text-gray-800 pr-1'
+        hijriDate.classList = 'text-lg text-semibold text-gray-800 dark:text-slate-200 pr-1'
         cityDateContainer.appendChild(hijriDate);
 
         prayTimesContainer.innerHTML = '';
@@ -69,6 +70,10 @@ function getInfo(cityCode) {
         ishaTime.textContent = `العشاء ${convertTo12(data.data.timings.Isha)}`;
         ishaTime.classList = 'border flex-grow p-1 text-center';
 
+        const midnightTime = document.createElement('p');
+        midnightTime.textContent = `منتصف الليل ${convertTo12(data.data.timings.Midnight)}`;
+        midnightTime.classList = 'border flex-grow p-1 text-center';
+
         const tableContainer = document.createElement('div');
         tableContainer.classList = 'flex flex-row justify-center items-center flex-wrap w-full gap-6';
 
@@ -77,6 +82,7 @@ function getInfo(cityCode) {
         tableContainer.appendChild(asrTime);
         tableContainer.appendChild(maghribTime);
         tableContainer.appendChild(ishaTime);
+        tableContainer.appendChild(midnightTime);
 
         prayTimesContainer.appendChild(tableContainer);
 

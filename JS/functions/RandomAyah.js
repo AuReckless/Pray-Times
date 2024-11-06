@@ -13,6 +13,7 @@ fetch(`https://api.alquran.cloud/v1/ayah/random/ar.asad?randomParam=${random}`)
 
     const ayah = document.createElement('p')
     ayah.textContent = `{${data.data.text}}`
+    ayah.className = "text-slate-200"
     container.appendChild(ayah)
 
     const numberOfAyah = document.createElement('p')
